@@ -1,68 +1,38 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
-                <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
-                        {{ csrf_field() }}
-
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                                    </label>
+    <div class="be-wrapper be-login">
+        <div class="be-content">
+            <div class="main-content container-fluid">
+                <div class="splash-container">
+                    <div class="panel panel-default panel-border-color panel-border-color-primary">
+                        <div class="panel-heading"><img src="assets/img/logo-xx.png" alt="logo" width="102" height="27" class="logo-img"><span class="splash-description">Please enter your user information.</span></div>
+                        <div class="panel-body">
+                            <form action="http://foxythemes.net/preview/products/beagle2/index.html" method="get">
+                                <div class="form-group">
+                                    <input id="username" type="text" placeholder="Username" autocomplete="off" class="form-control">
                                 </div>
-                            </div>
+                                <div class="form-group">
+                                    <input id="password" type="password" placeholder="Password" class="form-control">
+                                </div>
+                                <div class="form-group row login-tools">
+                                    <div class="col-xs-6 login-remember">
+                                        <div class="be-checkbox">
+                                            <input type="checkbox" id="remember">
+                                            <label for="remember">Remember Me</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 login-forgot-password"><a href="#">Forgot Password?</a></div>
+                                </div>
+                                <div class="form-group login-submit">
+                                    <button data-dismiss="modal" type="submit" class="btn btn-primary btn-xl">Sign me in</button>
+                                </div>
+                            </form>
                         </div>
-
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Forgot Your Password?
-                                </a>
-                            </div>
-                        </div>
-                    </form>
+                    </div>
+                    <div class="splash-footer"><span>Don't have an account? <a href="{{ url('register') }}">Sign Up</a></span></div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection
