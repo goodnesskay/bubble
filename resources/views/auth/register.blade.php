@@ -11,19 +11,40 @@
                             <span class="splash-description">Please register on our platform to enjoy our services.</span>
                         </div>
                         <div class="panel-body">
-                            <form action="" method="get"><span class="splash-title xs-pb-20">Sign Up</span>
-                                <div class="form-group">
-                                    <input type="text" name="username" required="" placeholder="Username" autocomplete="off" class="form-control">
+                            <form action="{{ route('register') }}" method="POST"><span class="splash-title xs-pb-20">Sign Up</span>
+                                {{ csrf_field() }}
+                                <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
+                                    <input id="username" type="text" placeholder="Username" name="username" autocomplete="off" class="form-control">
+                                    @if ($errors->has('username'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('username') }}</strong>
+                                    </span>
+                                    @endif
                                 </div>
-                                <div class="form-group">
-                                    <input type="email" name="email" required="" placeholder="john@email.com" autocomplete="off" class="form-control">
+                                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                    <input id="username" type="email" placeholder="E-mail Address" name="email" autocomplete="off" class="form-control">
+                                    @if ($errors->has('email'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                    @endif
                                 </div>
                                 <div class="form-group row signup-password">
-                                    <div class="col-xs-6">
-                                        <input required="" name="mobile_number" placeholder="Mobile Number" class="form-control">
+                                    <div class="col-xs-6 {{ $errors->has('mobile_number') ? ' has-error' : '' }}">
+                                        <input name="mobile_number" placeholder="Mobile Number" class="form-control">
+                                        @if ($errors->has('mobile_number'))
+                                            <span class="help-block">
+                                        <strong>{{ $errors->first('mobile_number') }}</strong>
+                                    </span>
+                                        @endif
                                     </div>
-                                    <div class="col-xs-6">
-                                        <input id="password" name="password" placeholder="Password" type="password" required="" class="form-control">
+                                    <div class="col-xs-6 {{ $errors->has('password') ? ' has-error' : '' }}">
+                                        <input id="password" name="password" placeholder="Password" type="password" class="form-control">
+                                        @if ($errors->has('password'))
+                                            <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="form-group xs-pt-10">

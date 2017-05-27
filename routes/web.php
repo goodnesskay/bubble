@@ -24,6 +24,10 @@ Route::group(['middleware' => ['web']], function () {
         'uses'=>'UserController@index',
         'as'=>'profile'
     ]);
+    Route::get('password-reset',[
+        'uses'=>'UserController@passwordResetView',
+        'as'=>'password-reset'
+    ]);
 
     /**
      *  Transactions
