@@ -12,6 +12,10 @@
 <script src="{{ asset('dashboard/lib/jquery-ui/jquery-ui.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('dashboard/lib/jqvmap/jquery.vmap.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('dashboard/lib/jqvmap/maps/jquery.vmap.world.js') }}" type="text/javascript"></script>
+<script src="{{ asset('dashboard/lib/select2/js/select2.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('dashboard/lib/select2/js/select2.full.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('dashboard/lib/daterangepicker/js/daterangepicker.js') }}" type="text/javascript"></script>
+<script src="{{ asset('dashboard/lib/datetimepicker/js/bootstrap-datetimepicker.min.js') }}" type="text/javascript"></script>
 <script type="text/javascript">
     $(document).ready(function(){
         //initialize the javascript

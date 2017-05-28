@@ -18,15 +18,11 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label">Input Password</label>
+                                    <label class="col-sm-3 control-label">Select2</label>
                                     <div class="col-sm-6">
-                                        <input type="password" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label">Placeholder Input</label>
-                                    <div class="col-sm-6">
-                                        <input type="text" placeholder="Placeholder text" class="form-control">
+                                        <select class="select2">
+                                            <option>Alaska</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <button class="btn btn-primary btn-lg center-block">Enter</button>
