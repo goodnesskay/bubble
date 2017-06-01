@@ -15,7 +15,13 @@
                             </li>
                             <li><a href="{{ url('profile') }}/{{ Auth::User()->id }}/{{ str_slug(Auth::User()->username) }}"><span class="icon mdi mdi-face"></span> Account</a></li>
                             <li><a href="{{ url('password-reset') }}/{{ Auth::User()->id }}/{{ str_slug(Auth::User()->username) }}"><span class="icon mdi mdi-settings"></span> Password Reset</a></li>
-                            <li><a href="#"><span class="icon mdi mdi-power"></span> Logout</a></li>
+                            <li>
+                                <a href="{{ url('/logout') }}" onclick="event.preventDefault();  document.getElementById('logout-form').submit();">
+                                    <span class="icon mdi mdi-power"></span> Logout</a>
+                                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
                         </ul>
                     </li>
                 </ul>

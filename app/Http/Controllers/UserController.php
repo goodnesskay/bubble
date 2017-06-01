@@ -29,7 +29,7 @@ class UserController extends Controller
     public function passwordReset(Request $request,$id)
     {
         $this->validate($request,[
-            'password' => 'required|min:6|confirm'
+            'password' => 'required|min:6|confirmed'
         ]);
 
         $user = User::find($id);

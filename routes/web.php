@@ -38,6 +38,12 @@ Route::group(['middleware' => ['web']], function () {
         'middleware'=>'auth'
     ]);
 
+    Route::post('password-reset/{id}/{username}',[
+        'uses'=>'UserController@passwordReset',
+        'as'=>'password-reset',
+        'middleware'=>'auth'
+    ]);
+
     /**
      *  Transactions
      *
