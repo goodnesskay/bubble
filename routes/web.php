@@ -65,6 +65,12 @@ Route::group(['middleware' => ['web']], function () {
         'middleware'=>'auth'
     ]);
 
+    Route::post('edit-request/{id}',[
+        'uses'=>'TransactionController@update',
+        'as'=>'edit-request',
+        'middleware'=>'auth'
+    ]);
+
     Route::get('approve-request/{id}',[
         'uses'=>'TransactionController@closeRequest',
         'as'=>'approve-request',

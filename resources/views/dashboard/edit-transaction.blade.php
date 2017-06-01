@@ -25,7 +25,7 @@
                                     @endforeach
                                 </div>
                             @endif
-                            <form action="{{ url('request-wash') }}" method="post" style="border-radius: 0px;" class="form-horizontal group-border-dashed">
+                            <form action="{{ url('edit-request') }}/{{$requests->id}}" method="post" style="border-radius: 0px;" class="form-horizontal group-border-dashed">
                                 {{ csrf_field() }}
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Vehicle Type</label>
