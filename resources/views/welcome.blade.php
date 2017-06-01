@@ -19,7 +19,7 @@
                             <li><a href="#link" class="btn"><i class="fa fa-instagram"></i></a></li>
                         </ul>
                     </div>
-                    <a href="{{ url('register') }}" class="btn btn-info btn-md btn-big">
+                    <a href="{{ url('register') }}" class="btn btn-success btn-md btn-big">
                         <i class="fa fa-paper-plane-o"></i> Wash Now
                     </a>
                 </div>
@@ -36,22 +36,22 @@
 
 @section('content')
     <!-- About -->
-    <section class="section" id="about">
+    <section class="section">
         <div class="container">
             <div class="section-heading text-center">
-                <h2 class="title">Luxury Bubbles</h2>
-                <h5 class="description">We are awesome at making your vehicle brand new. get to know more about what we do.</h5>
+                <h2 class="title">We are awesome at making your vehicle brand new</h2>
             </div>
             <!-- first row -->
             <div class="row">
-                <div class="col-md-12">
-                        <div class="text-center">
-                            <h4 class="info-title">Vehicles are our joy</h4>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet nostrum voluptatum, facere saepe aut repudiandae dolor tempora nemo.
-                            </p>
-                            <a href="#up">More...</a>
-                        </div>
+                <div class="col-md-6 text-justify">
+                        <p style="text-space:200px">
+                            The Luxury Bubbles is a mobile hand car wash serving the ancient town of Ile Ife. At The Luxury Bubbles, we share the belief that washing a car is just not an act but an experience, hence, we have created a system that is not just quick, efficient and cost effective, but also convenient.
+                            <br>
+                            The Luxury Bubbles offers her esteemed customers the luxury of having their cars washed at their preferred location. Our main goal is for our customers to feel good every time they see our logo.
+                        </p>
+                </div>
+                <div class="col-md-6">
+                        <img src="assets/img/web-design.png" alt="{{ config('app.name') }} image"  class="img-responsive" />
                 </div>
             </div>
         </div>
