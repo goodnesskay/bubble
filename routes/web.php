@@ -59,5 +59,23 @@ Route::group(['middleware' => ['web']], function () {
         'middleware'=>'auth'
     ]);
 
+    Route::get('edit-request/{id}',[
+        'uses'=>'TransactionController@edit',
+        'as'=>'edit-request',
+        'middleware'=>'auth'
+    ]);
+
+    Route::get('approve-request/{id}',[
+        'uses'=>'TransactionController@closeRequest',
+        'as'=>'approve-request',
+        'middleware'=>'auth'
+    ]);
+
+    Route::get('delete-request/{id}',[
+        'uses'=>'TransactionController@destroy',
+        'as'=>'delete-request',
+        'middleware'=>'auth'
+    ]);
+
 });
 

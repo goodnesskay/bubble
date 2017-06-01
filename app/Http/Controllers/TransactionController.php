@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Transaction;
+use Carbon\Carbon;
 use Auth;
 use DB;
 
@@ -127,7 +128,7 @@ class TransactionController extends Controller
 
         if ($requests->save())
         {
-            return redirect()->back()->with('alert','Your have successfully closed #123'.$requests->id.'11');
+            return redirect()->back()->with('alert','Your have successfully approved #LB01'.$requests->id.'89');
         }else{
             return redirect()->back()->with('alert','Request not successful');
         }
