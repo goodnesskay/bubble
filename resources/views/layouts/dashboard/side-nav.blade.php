@@ -1,5 +1,5 @@
 <div class="be-left-sidebar">
-    <div class="left-sidebar-wrapper"><a href="#" class="left-sidebar-toggle">Dashboard</a>
+    <div class="left-sidebar-wrapper"><a href="{{ url('/home') }}" class="left-sidebar-toggle">Dashboard</a>
         <div class="left-sidebar-spacer">
             <div class="left-sidebar-scroll">
                 <div class="left-sidebar-content">
@@ -13,8 +13,10 @@
                         </li>
                         <li class="parent"><a href="#"><i class="icon mdi mdi-tab"></i><span>Transactions</span></a>
                             <ul class="sub-menu">
-                                <li><a href="{{ url('all-transactions') }}">All</a></li>
-                                <li><a href="{{ url('all-transactions') }}">My Requests</a></li>
+                                @if(Auth::User()->id === 1)
+                                    <li><a href="{{ url('all-transactions') }}">All</a></li>
+                                @endif
+                                <li><a href="{{ url('my-transactions') }}">My Requests</a></li>
                             </ul>
                         </li>
 

@@ -32,9 +32,10 @@ Route::group(['middleware' => ['web']], function () {
         'middleware'=>'auth'
     ]);
 
-    Route::get('password-reset',[
+    Route::get('password-reset/{id}/{username}',[
         'uses'=>'UserController@passwordResetView',
-        'as'=>'password-reset'
+        'as'=>'password-reset',
+        'middleware'=>'auth'
     ]);
 
     /**
@@ -56,6 +57,12 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('all-transactions',[
         'uses'=>'TransactionController@showAll',
         'as'=>'all-transactions',
+        'middleware'=>'auth'
+    ]);
+
+    Route::get('my-transactions',[
+        'uses'=>'TransactionController@myRequests',
+        'as'=>'my-transactions',
         'middleware'=>'auth'
     ]);
 

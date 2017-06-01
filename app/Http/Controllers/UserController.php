@@ -14,9 +14,10 @@ class UserController extends Controller
      *  Password Reset View
      *
     */
-    public function passwordResetView()
+    public function passwordResetView($id)
     {
-        return view('dashboard.password-reset');
+        $user = User::find($id);
+        return view('dashboard.password-reset',['users',Auth::User()])->with('user',$user);
     }
 
 

@@ -68,6 +68,13 @@ class TransactionController extends Controller
         return view('dashboard.transaction',['users',Auth::User()])->with('requests',$requests);
     }
 
+    public function myRequests()
+    {
+        $requests = DB::table('transactions')->select('*')->where('created_by','=', Auth::User()->id)->paginate(15);
+        return view('dashboard.my-transaction',['users',Auth::User()])->with('requests',$requests);
+    }
+
+
     /**
      * Show the form for editing the specified resource.
      *
