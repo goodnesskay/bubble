@@ -18,7 +18,7 @@
                     <div class="widget widget-tile">
                         <div id="spark2" class="chart sparkline"></div>
                         <div class="data-info">
-                            <div class="desc">Monthly Sales</div>
+                            <div class="desc">Monthly Deals</div>
                             <div class="value"><span class="indicator indicator-positive mdi mdi-chevron-up"></span><span data-toggle="counter" data-end="80" data-suffix="%" class="number">0</span>
                             </div>
                         </div>
@@ -28,7 +28,7 @@
                     <div class="widget widget-tile">
                         <div id="spark3" class="chart sparkline"></div>
                         <div class="data-info">
-                            <div class="desc">Impressions</div>
+                            <div class="desc">Completed</div>
                             <div class="value"><span class="indicator indicator-positive mdi mdi-chevron-up"></span><span data-toggle="counter" data-end="532" class="number">0</span>
                             </div>
                         </div>
@@ -38,7 +38,7 @@
                     <div class="widget widget-tile">
                         <div id="spark4" class="chart sparkline"></div>
                         <div class="data-info">
-                            <div class="desc">Downloads</div>
+                            <div class="desc">Subscriptions</div>
                             <div class="value"><span class="indicator indicator-negative mdi mdi-chevron-down"></span><span data-toggle="counter" data-end="113" class="number">0</span>
                             </div>
                         </div>
