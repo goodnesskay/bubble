@@ -4,19 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Transaction;
+use Auth;
+use DB;
 
 class TransactionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -37,7 +29,7 @@ class TransactionController extends Controller
     {
         $this->validate($request,[
             'type_of_vehicle'=>'required',
-            'number_of_cars'=>'required',
+            'number_of_vehicle'=>'required',
             'location_for_the_wash'=>'required',
             'wash_schedule'=>'required',
             'water_availability'=>'required',
@@ -47,7 +39,7 @@ class TransactionController extends Controller
         $requests = new Transaction();
 
         $requests->type_of_vehicle = $request->input('type_of_vehicle');
-        $requests->number_of_cars = $request->input('number_of_cars');
+        $requests->number_of_vehicle = $request->input('number_of_vehicle');
         $requests->location_for_the_wash = $request->input('location_for_the_wash');
         $requests->wash_schedule = $request->input('wash_schedule');
         $requests->water_availability = $request->input('water_availability');
@@ -69,9 +61,10 @@ class TransactionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function showAll()
     {
-        return view('dashboard.transaction');
+        $requests = DB::table('transactions')->select('*')->paginate(15);
+        return view('dashboard.transaction',['users',Auth::User()])->with('requests',$requests);
     }
 
     /**
@@ -97,7 +90,7 @@ class TransactionController extends Controller
     {
         $this->validate($request,[
             'type_of_vehicle'=>'required',
-            'number_of_cars'=>'required',
+            'number_of_vehicle'=>'required',
             'location_for_the_wash'=>'required',
             'wash_schedule'=>'required',
             'water_availability'=>'required',
@@ -107,7 +100,7 @@ class TransactionController extends Controller
         $requests = Transaction::find($id);
 
         $requests->type_of_vehicle = $request->input('type_of_vehicle');
-        $requests->number_of_cars = $request->input('number_of_cars');
+        $requests->number_of_vehicle = $request->input('number_of_vehicle');
         $requests->location_for_the_wash = $request->input('location_for_the_wash');
         $requests->wash_schedule = $request->input('wash_schedule');
         $requests->water_availability = $request->input('water_availability');

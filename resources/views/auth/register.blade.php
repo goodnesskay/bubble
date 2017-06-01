@@ -13,6 +13,14 @@
                         <div class="panel-body">
                             <form action="{{ route('register') }}" method="POST"><span class="splash-title xs-pb-20">Sign Up</span>
                                 {{ csrf_field() }}
+                                <div class="form-group{{ $errors->has('full_name') ? ' has-error' : '' }}">
+                                    <input id="username" type="text" placeholder="Full Name" name="full_name" autocomplete="off" class="form-control">
+                                    @if ($errors->has('full_name'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('full_name') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
                                 <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
                                     <input id="username" type="text" placeholder="Username" name="username" autocomplete="off" class="form-control">
                                     @if ($errors->has('username'))
@@ -47,6 +55,7 @@
                                         @endif
                                     </div>
                                 </div>
+                                <input type="hidden" name="status" value="2">
                                 <div class="form-group xs-pt-10">
                                     <div class="be-checkbox">
                                         <input type="checkbox" id="remember">

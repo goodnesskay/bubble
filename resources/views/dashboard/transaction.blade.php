@@ -5,7 +5,7 @@
         <div class="page-head">
             <h2 class="page-head-title">Transactions</h2>
             <ol class="breadcrumb page-head-nav">
-                <li>Your transactions till {{ date('M/Y') }}</li>
+                <li>Requests made till {{ date('D/M/Y') }}</li>
             </ol>
         </div>
         <div class="main-content container-fluid">
@@ -17,55 +17,45 @@
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive noSwipe">
-                                <table class="table table-striped table-hover">
-                                    <thead>
-                                    <tr>
-                                        <th style="width:5%;">
-                                            <div class="be-checkbox be-checkbox-sm">
-                                                <input id="check1" type="checkbox">
-                                                <label for="check1"></label>
-                                            </div>
-                                        </th>
-                                        <th style="width:20%;">User</th>
-                                        <th style="width:17%;">Last Commit</th>
-                                        <th style="width:15%;">Milestone</th>
-                                        <th style="width:10%;">Branch</th>
-                                        <th style="width:10%;">Date</th>
-                                        <th style="width:10%;"></th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="be-checkbox be-checkbox-sm">
-                                                <input id="check2" type="checkbox">
-                                                <label for="check2"></label>
-                                            </div>
-                                        </td>
-                                        <td class="user-avatar cell-detail user-info"><img src="assets/img/avatar6.png" alt="Avatar"><span>Penelope Thornton</span><span class="cell-detail-description">Developer</span></td>
-                                        <td class="cell-detail"> <span>Initial commit</span><span class="cell-detail-description">Bootstrap Admin</span></td>
-                                        <td class="milestone"><span class="completed">8 / 15</span><span class="version">v1.2.0</span>
-                                            <div class="progress">
-                                                <div style="width: 45%" class="progress-bar progress-bar-primary"></div>
-                                            </div>
-                                        </td>
-                                        <td class="cell-detail"><span>master</span><span class="cell-detail-description">63e8ec3</span></td>
-                                        <td class="cell-detail"><span>May 6, 2016</span><span class="cell-detail-description">8:30</span></td>
-                                        <td class="text-right">
-                                            <div class="btn-group btn-hspace">
-                                                <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle">Open <span class="icon-dropdown mdi mdi-chevron-down"></span></button>
-                                                <ul role="menu" class="dropdown-menu pull-right">
-                                                    <li><a href="#">Action</a></li>
-                                                    <li><a href="#">Another action</a></li>
-                                                    <li><a href="#">Something else here</a></li>
-                                                    <li class="divider"></li>
-                                                    <li><a href="#">Separated link</a></li>
-                                                </ul>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
+                                @if(!$requests->count())
+                                    <div class="text-center alert alert-danger">
+                                        <p>No Transactions have been made yet</p>
+                                    </div>
+                                @else
+                                    <table class="table table-striped table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th style="width:10%;">
+                                                Request ID
+                                            </th>
+                                            <th style="width:20%;">Request From</th>
+                                            <th style="width:17%;">Request Time</th>
+                                            <th style="width:15%;">Vehicle Type</th>
+                                            <th style="width:10%;">Service Type</th>
+                                            <th style="width:10%;">Wash Schedule</th>
+                                            <th style="width:10%;"></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        @foreach($requests as $request)
+                                            <tr>
+                                                <td>LB01{{ $request->id }}89</td>
+                                                <td class="user-avatar cell-detail user-info"><img src="assets/img/avatar6.png" alt="Avatar"><span>{{ $request->user->created_by }}</span><span class="cell-detail-description">Developer</span></td>
+                                                <td class="cell-detail">{{ $request->type_of_vehicle }}</td>
+                                                <td class="text-bold">{{ $request->type_of_vehicle }}</td>
+                                                <td class="text-bold">{{ $request->service_type }}</td>
+                                                <td class="cell-detail"><i class="icon mdi mdi-time "></i> {{ $request->wash_schedule }}</td>
+                                                <td class="">
+                                                    <a class="btn btn-primary" href=""><i class="icon mdi mdi-edit"></i></a>
+                                                    <a class="btn btn-danger" href=""><i class="icon mdi mdi-delete"></i></a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+                                    @endif
+
+                                {{ $requests->links() }}
                             </div>
                         </div>
                     </div>

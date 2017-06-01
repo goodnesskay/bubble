@@ -16,7 +16,7 @@ class CreateTransactionsTable extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('type_of_vehicle');
-            $table->string('number_of_cars');
+            $table->string('number_of_vehicle');
             $table->text('location_for_the_wash');
             $table->string('wash_schedule');
             $table->string('water_availability');

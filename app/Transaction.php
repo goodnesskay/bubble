@@ -10,4 +10,5 @@ class Transaction extends Model
                                     'wash_schedule','water_availability',
                                     'service_type','created_by','status'];
 
+
 }

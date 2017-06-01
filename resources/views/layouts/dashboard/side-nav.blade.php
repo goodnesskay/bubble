@@ -5,15 +5,16 @@
                 <div class="left-sidebar-content">
                     <ul class="sidebar-elements">
                         <li class="divider">Menu</li>
-                        <li class="active"><a href=""><i class="icon mdi mdi-home"></i><span>Dashboard</span></a>
+                        <li class="active"><a href="{{ url('/home') }}"><i class="icon mdi mdi-home"></i><span>Dashboard</span></a>
                         </li>
-                        <li><a href=""><i class="icon mdi mdi-face"></i><span>Profile</span></a>
+                        <li><a href="{{ url('profile') }}/{{ Auth::User()->id }}/{{ str_slug(Auth::User()->username) }}"><i class="icon mdi mdi-face"></i><span>Profile</span></a>
                         </li>
                         <li class="active"><a href="{{ url('request-wash') }}"><i class="icon mdi mdi-time-countdown"></i><span>Request Wash</span></a>
                         </li>
                         <li class="parent"><a href="#"><i class="icon mdi mdi-tab"></i><span>Transactions</span></a>
                             <ul class="sub-menu">
                                 <li><a href="{{ url('all-transactions') }}">All</a></li>
+                                <li><a href="{{ url('all-transactions') }}">My Requests</a></li>
                             </ul>
                         </li>
 

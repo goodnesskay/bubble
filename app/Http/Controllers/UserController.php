@@ -9,15 +9,6 @@ use DB;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return view('dashboard.profile');
-    }
 
     /**
      *  Password Reset View
@@ -83,16 +74,17 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,[
-            'full_name' => 'required|string|max:255',
-            'username' => 'required|string|min:15|unique:users',
-            'email' => 'required|string|email|max:255|unique:users',
-            'mobile_number'=> 'max:255|unique:users|num',
+            'full_name' => 'required|string',
+            'username' => 'required|string|max:15|distinct',
+            'email' => 'required|string|email|max:255|distinct',
+            'mobile_number'=> 'distinct|numeric',
+            'date_of_birth'=> 'required',
             'your_location'=>'required',
         ]);
 
         $user = User::find($id);
 
-        $user->fullname = $request->input('full_name');
+        $user->full_name = $request->input('full_name');
         $user->username = $request->input('username');
         $user->email = $request->input('email');
         $user->mobile_number = $request->input('mobile_number');
