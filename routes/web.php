@@ -12,9 +12,15 @@
 */
 
 Route::group(['middleware' => ['web']], function () {
-    Route::get('/', function () {
-        return view('welcome');
-    });
+    Route::get('/',[
+        'uses'=>'FrontEndController@welcome',
+        'as'=>'/'
+    ]);
+
+    Route::get('/faq',[
+        'uses'=>'FrontEndController@faq',
+        'as'=>'faq'
+    ]);
 
     Auth::routes();
 

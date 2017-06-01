@@ -23,10 +23,10 @@
                 <div class="collapse navbar-collapse" id="navigation-example">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="">Services</a>
+                            <a href="{{ url('') }}#how-it-works">How it Works</a>
                         </li>
                         <li>
-                            <a href="">How it Works</a>
+                            <a href="{{ url('') }}#services">Services</a>
                         </li>
                         <li>
                             <a href="{{ url('login') }}" class="btn btn-info btn-md">

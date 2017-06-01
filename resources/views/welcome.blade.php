@@ -2,12 +2,12 @@
 
 
 @section('banner')
-    <div id="home" class="page-hero">
+    <div id="home" style="background-image: url('assets/img/blog/blog2.jpg');" class="page-hero">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-md-offset-0 col-sm-8 col-sm-offset-2 home-text">
                     <h1 class="title">Let's do the trouble for you</h1>
-                    <p class="up-type-title"> I am <span class="animated-text" id="animated-text"></span></p>
+                    <p class="up-type-title"> We <span class="animated-text" id="animated-text"></span></p>
                     <p class="p-details">
                         We bring the car wash to anywhere you are. We give you the best than you imagine.
                     </p>
@@ -24,7 +24,7 @@
                     </a>
                 </div>
                 <div class="col-md-5 text-center">
-                    <img src="assets/img/header-img.png" alt="header image" class="header-img img-responsive">
+                    {{--<img src="assets/img/header-img.png" alt="header image" class="header-img img-responsive">--}}
                 </div>
             </div>
             <div id="particles-js"></div>
@@ -57,166 +57,171 @@
         </div>
     </section>
     <!-- End about -->
-    <!-- services -->
-    <section class="section services bg-gray" id="services">
+    <section class="section services bg-gray" id="how-it-works">
         <div class="container">
             <div class="section-heading text-center wow fadeInUp">
                 <h2 class="title text-center">How it Works</h2>
-                <ul class="nav nav-pills nav-pills-primary">
-                    <li class="active"><a href="#web-design" data-toggle="tab">Request</a></li>
-                    <li><a href="#web-dev" data-toggle="tab">Wash</a></li>
-                    <li><a href="#desktop" data-toggle="tab">Hurray!</a></li>
-                </ul>
-                <br>
             </div>
             <div>
-                <div class="tab-content tab-space">
-                    <!-- tab web-design -->
-                    <div class="tab-pane active" id="web-design">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="img-container">
-                                    <img src="assets/img/web-design.png" alt="image" style="width:50%;" class="center-block img-responsive" />
-                                </div>
-                                <div class="text-center">
-                                    <h4 class="info-title">It is easy. We just need you to request for a wash.</h4>
-                                    <a href="{{ url('register') }}" class="btn btn-primary">
-                                        Wash Now
-                                    </a>
-                                </div>
-                            </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="img-container">
+                            <img src="assets/img/web-design.png" alt="image" style="width:50%;"
+                                 class="center-block img-responsive"/>
+                        </div>
+                        <div class="text-center">
+                            <h4 class="info-title">It is easy. We just need you to request a wash.</h4>
                         </div>
                     </div>
-                    <!-- end tab mobile -->
-                    <!-- tab web-dev -->
-                    <div class="tab-pane" id="web-dev">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="img-container">
-                                    <img src="assets/img/web-design.png" alt="image" style="width:50%;" class="center-block img-responsive" />
-                                </div>
-                                <div class="text-center">
-                                    <h4 class="info-title">It is our job. We do it professionally and to your greatest satisfaction.</h4>
-                                    <a href="{{ url('register') }}" class="btn btn-primary">
-                                        Wash Now
-                                    </a>
-                                </div>
-                            </div>
+                    <div class="col-md-4">
+                        <div class="img-container">
+                            <img src="assets/img/web-design.png" alt="image" style="width:50%;"
+                                 class="center-block img-responsive"/>
+                        </div>
+                        <div class="text-center">
+                            <h4 class="info-title">It is our job. We do it professionally and to your greatest
+                                satisfaction.</h4>
                         </div>
                     </div>
-                    <!-- end tab tablet -->
-                    <!-- tab desktop -->
-                    <div class="tab-pane" id="desktop">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="img-container">
-                                    <img src="assets/img/web-design.png" alt="image" style="width:50%;" class="center-block img-responsive" />
-                                </div>
-                                <div class="text-center">
-                                    <h4 class="info-title">Hurray!!! The wash is complete. Your vehicle is back to shape again.</h4>
-                                    <a href="{{ url('register') }}" class="btn btn-primary">
-                                        Wash Now
-                                    </a>
-                                </div>
-                            </div>
+                    <div class="col-md-4">
+                        <div class="img-container">
+                            <img src="assets/img/web-design.png" alt="image" style="width:50%;"
+                                 class="center-block img-responsive"/>
+                        </div>
+                        <div class="text-center">
+                            <h4 class="info-title">Hurray!!! The wash is complete. Your vehicle is back to shape
+                                again.</h4>
                         </div>
                     </div>
-                    <!-- end tab desktop -->
                 </div>
             </div>
         </div>
-        <!-- End container -->
     </section>
-    <!-- End services -->
+    <!-- Subscribe -->
+    <div class="subscribe bg-primary">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h3 class="title">We are ready to give you the best wash</h3>
+                    <a href="{{ url('register') }}" class="btn btn-default">Wash Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End subscribe -->
     <!-- Price table -->
-    <div class="section price-table" id="price">
+    <div class="section price-table" id="services">
         <div class="container">
             <div class="section-header text-center">
                 <h2 class="title">Services We Offer</h2>
                 <h5 class="description">Be rest assured we offer the best of these.</h5>
             </div>
-            <div class="row text-center">
+            <div class="row">
                 <div class="col-md-4">
-                    <div class="card card-pricing">
+                    <div class="card card-profile card-plain">
+                        <div class="card-avatar">
+                            <a href="#link">
+                                <img class="img" src="{{ asset('assets/img/team/3.jpg') }}" alt="Services" />
+                            </a>
+                        </div>
                         <div class="content">
-                            <div class="header header-primary text-center">
-                                <h3 class="widget-header-title">Full Detailing</h3>
+                            <h4 class="card-title">Interior Wash</h4>
+                            <h6 class="category text-muted">N700 - N1000</h6>
+                            <p class="card-description">
+                                This involves hand washing both the exterior and interior of the vehicle. The interior is also vacuumed.
+                            </p>
+                            <div class="footer">
+                                <a href="{{ url('register') }}" class="btn btn-default">Wash Now</a>
                             </div>
-                            <h1 class="card-title"><small>N</small>1000<small>/wash</small></h1>
-                            <ul>
-                                <li>Brief detailing of what it means</li>
-                            </ul>
-                            <a href="{{ url('register') }}" class="btn btn-primary">
-                                Get Started
-                            </a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card card-pricing ">
-                        <div class="content content-primary">
-                            <div class="header header-success text-center">
-                                <h3 class="widget-header-title">Exterior Detailing</h3>
-                            </div>
-                            <h1 class="card-title"><small>N</small>1000<small>/wash</small></h1>
-                            <ul>
-                                <li>Brief detailing of what it means</li>
-                            </ul>
-                            <a href="{{ url('register') }}" class="btn btn-primary">
-                                Get Started
+                    <div class="card card-profile card-plain">
+                        <div class="card-avatar">
+                            <a href="#link">
+                                <img class="img" src="{{ asset('assets/img/team/3.jpg') }}" alt="Services" />
                             </a>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card card-pricing">
                         <div class="content">
-                            <div class="header header-danger text-center">
-                                <h3 class="widget-header-title">Interior Detailing</h3>
+                            <h4 class="card-title">Hand Wash</h4>
+                            <h6 class="category text-muted">N500 - N800</h6>
+                            <p class="card-description">
+                                This involves the conventional hand washing of the exterior part of the vehicle with wash mitts and chemicals. This service doesn’t involve working on the interior of the car, we don’t detail the exterior too.
+                            </p>
+                            <div class="footer">
+                                <a href="{{ url('register') }}" class="btn btn-default">Wash Now</a>
                             </div>
-                            <h1 class="card-title"><small>N</small>1000<small>/wash</small></h1>
-                            <ul>
-                                <li>Brief detailing of what it means</li>
-                            </ul>
-                            <a href="{{ url('register') }}" class="btn btn-primary">
-                                Get Started
-                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="row text-center">
-                    <div class="col-md-4">
-                        <div class="card card-pricing">
-                            <div class="content">
-                                <div class="header header-primary text-center">
-                                    <h3 class="widget-header-title">Hand Washing</h3>
-                                </div>
-                                <h1 class="card-title"><small>N</small>1000<small>/wash</small></h1>
-                                <ul>
-                                    <li>Brief detailing of what it means</li>
-                                </ul>
-                                <a href="{{ url('register') }}" class="btn btn-primary">
-                                    Get Started
-                                </a>
+
+                <div class="col-md-4">
+                    <div class="card card-profile card-plain">
+                        <div class="card-avatar">
+                            <a href="#link">
+                                <img class="img" src="{{ asset('assets/img/team/3.jpg') }}" alt="Services" />
+                            </a>
+                        </div>
+                        <div class="content">
+                            <h4 class="card-title">Exterior Wash</h4>
+                            <h6 class="category text-muted">N800 - N1200</h6>
+                            <p class="card-description">
+                                This involves hand washing both the exterior and interior. The interior is vacuumed and detailing is done on the exterior; Waxing and Polishing, etc.
+                            </p>
+                            <div class="footer">
+                                <a href="{{ url('register') }}" class="btn btn-default">Wash Now</a>
+                            </div>
+                            <br><br>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card card-profile card-plain">
+                        <div class="card-avatar">
+                            <a href="#link">
+                                <img class="img" src="{{ asset('assets/img/team/3.jpg') }}" alt="Services" />
+                            </a>
+                        </div>
+                        <div class="content">
+                            <h4 class="card-title">Engine Detail</h4>
+                            <h6 class="category text-muted">N1000 - N1200</h6>
+                            <p class="card-description">
+                                This involves hand washing the exterior of the car and detailing the engine. The engine is degreased and wiped clean of grease and grime.
+                            </p>
+                            <div class="footer">
+                                <a href="{{ url('register') }}" class="btn btn-default">Wash Now</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card card-pricing ">
-                            <div class="content content-primary">
-                                <div class="header header-success text-center">
-                                    <h3 class="widget-header-title">Engine Detailing</h3>
-                                </div>
-                                <h1 class="card-title"><small>N</small>1000<small>/wash</small></h1>
-                                <ul>
-                                    <li>Brief detailing of what it means</li>
-                                </ul>
-                                <a href="{{ url('register') }}" class="btn btn-primary">
-                                    Get Started
-                                </a>
+                </div>
+
+                <div class="col-md-4">
+
+                </div>
+
+
+
+                <div class="col-md-4">
+                    <div class="card card-profile card-plain">
+                        <div class="card-avatar">
+                            <a href="#link">
+                                <img class="img" src="{{ asset('assets/img/team/3.jpg') }}" alt="Services" />
+                            </a>
+                        </div>
+                        <div class="content">
+                            <h4 class="card-title">Full Detail</h4>
+                            <h6 class="category text-muted">N1500 - N2000</h6>
+                            <p class="card-description">
+                                This involves hand washing both the exterior and interior, detailing the exterior and interior and also the engine.
+                            </p>
+                            <div class="footer">
+                                <a href="{{ url('register') }}" class="btn btn-default">Wash Now</a>
                             </div>
                         </div>
                     </div>
+                </div>
             </div>
         </div>
     </div>
@@ -298,7 +303,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-4">
-                                <button type="button" class="btn btn-info">Subscribe</button>
+                                <button type="button" class="btn btn-default">Subscribe</button>
                             </div>
                         </div>
                     </form>
