@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Transaction;
+use App\Mail;
 use Carbon\Carbon;
 use Auth;
 use DB;
@@ -51,6 +52,7 @@ class TransactionController extends Controller
         if ($requests->save())
         {
             return redirect()->back()->with('alert','Your request has been successfully made. You will receive a call from our Agent in some minutes');
+            Mail::to($request->user())->send(new Transactions($transaction));
         }else{
             return redirect()->back()->withErrors($validator);
         }
@@ -119,6 +121,7 @@ class TransactionController extends Controller
         if ($requests->save())
         {
             return redirect()->back()->with('alert','Your request has been successfully made. You will receive a call from our Agent in some minutes');
+            Mail::to($request->user())->send(new RequestUpdate($transaction));
         }else{
             return redirect()->back()->withErrors($validator);
         }
@@ -136,6 +139,7 @@ class TransactionController extends Controller
         if ($requests->save())
         {
             return redirect()->back()->with('alert','Your have successfully approved #LB01'.$requests->id.'89');
+            Mail::to($request->user())->send(new RequestComplete($transaction));
         }else{
             return redirect()->back()->with('alert','Request not successful');
         }
@@ -154,6 +158,7 @@ class TransactionController extends Controller
         if($requests->destroy())
         {
             return redirect()->back()->with('alert','Your request has been successfully made. Your Transaction has been cancelled');
+            Mail::to($request->user())->send(new RequestDestroy($transaction));
         }else{
             return redirect()->back()->with('alert'.'Sorry! Your request was not completed');
         }

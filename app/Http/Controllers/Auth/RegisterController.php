@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Mail\Registeration;
 use App\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -73,5 +75,8 @@ class RegisterController extends Controller
             'status'=> $data['status'],
             'password' => bcrypt($data['password']),
         ]);
+
+        // Mail upon successful registration
+        Mail::to($data->user())->send(new Registeration($user));
     }
 }
