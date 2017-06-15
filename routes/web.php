@@ -88,6 +88,12 @@ Route::group(['middleware' => ['web']], function () {
         'middleware'=>'auth'
     ]);
 
+    Route::get('view-request/{id}',[
+        'uses'=>'TransactionController@showSingleRequest',
+        'as'=>'view-request',
+        'middleware'=>'auth'
+    ]);
+
     Route::get('edit-request/{id}',[
         'uses'=>'TransactionController@edit',
         'as'=>'edit-request',
