@@ -49,6 +49,10 @@
                                             <option value="4">4</option>
                                             <option value="5">5</option>
                                             <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                         </select>
                                     </div>
                                 </div>
@@ -57,9 +61,12 @@
                                     <div class="col-sm-6">
                                         <select name="service_type" class="form-control">
                                             <option value="">Select Service type</option>
-                                            <option value="Engine">Engine </option>
-                                            <option value="Interior">Interior</option>
-                                            <option value="Exterior">Exterior</option>
+                                            <option value="">Hand Wash (Between N500 - N800)</option>
+                                            <option value="">Interior Wash (Between  N700 - N1000)</option>
+                                            <option value="">Exterior Wash (Between N800 - N1200)</option>
+                                            <option value="">Engine Wash (Between N1000 - N1200)</option>
+                                            <option value="">Full Detail (Between N1500 - N2000)</option>
+                                            <option value="">Interior Wash & Exterior Wash (Between  )</option>
                                          </select>
                                     </div>
                                 </div>
@@ -74,10 +81,18 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label">Hour View</label>
+                                    <label class="col-sm-3 control-label">Day</label>
                                     <div class="col-md-3 col-xs-7">
-                                        <div data-start-view="0" data-date="1979-09-16T05:25:07Z" data-date-format="yyyy-mm-dd - HH:ii" data-link-field="dtp_input1" class="input-group date datetimepicker">
-                                            <input name="wash_schedule" size="16" type="text" value="" class="form-control"><span class="input-group-addon btn btn-primary"><i class="icon-th mdi mdi-calendar"></i></span>
+                                        <div data-min-view="2" data-date-format="yyyy-mm-dd" class="input-group date datetimepicker">
+                                            <input size="16" type="datetime" value="" class="form-control"><span class="input-group-addon btn btn-primary"><i class="icon-th mdi mdi-calendar"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Time</label>
+                                    <div class="col-md-3 col-xs-7">
+                                        <div data-start-view="0" data-date="2017-09-16T05:25:07Z" data-date-format="yyyy-mm-dd - HH:ii" data-link-field="dtp_input1" class="input-group date datetimepicker">
+                                            <input name="wash_schedule" size="16" type="datetime-local" value="" class="form-control"><span class="input-group-addon btn btn-primary"><i class="icon-th mdi mdi-calendar"></i></span>
                                         </div>
                                     </div>
                                 </div>

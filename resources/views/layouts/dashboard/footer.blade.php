@@ -21,7 +21,6 @@
         //initialize the javascript
         App.init();
         App.dashboard();
-
     });
 </script>
 </body>

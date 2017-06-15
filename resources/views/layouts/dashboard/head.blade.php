@@ -19,7 +19,6 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('dashboard/lib/select2/css/select2.min.css')}}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('dashboard/lib/daterangepicker/css/daterangepicker.css')}}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('dashboard/lib/datetimepicker/css/bootstrap-datetimepicker.min.css')}}"/>
-    <link rel="stylesheet" type="text/css" href="{{ asset('dashboard/lib/datetimepicker/css/bootstrap-datetimepicker.min.css')}}"/>
     <link rel="stylesheet" href="{{ asset('dashboard/css/style.css')}}" type="text/css"/>
 </head>
 <body>
