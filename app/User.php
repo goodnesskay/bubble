@@ -29,6 +29,6 @@ class User extends Authenticatable
 
     public function transaction()
     {
-        return $this->hasMany('App\Transaction','created_by');
+        return $this->hasOne('App\Transaction','created_by');
     }
 }

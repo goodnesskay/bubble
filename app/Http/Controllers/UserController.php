@@ -54,7 +54,7 @@ class UserController extends Controller
      */
     public function allCustomers()
     {
-        $users= DB::table('users')->select('*')->where('status','==','2')->paginate(20);
+        $users= DB::table('users')->select('*')->where('status','=','2')->paginate(20);
         return view('dashboard.customers',['users',Auth::User()])->with('users',$users);
     }
 

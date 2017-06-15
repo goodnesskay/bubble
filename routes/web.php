@@ -30,6 +30,12 @@ Route::group(['middleware' => ['web']], function () {
         'middleware'=>'auth'
     ]);
 
+    Route::get('/users',[
+        'uses'=>'UserController@allCustomers',
+        'as'=>'users',
+        'middleware'=>'auth'
+    ]);
+
     Route::get('profile/{id}/{username}',[
         'uses'=>'UserController@edit',
         'as'=>'profile',

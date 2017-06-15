@@ -69,7 +69,7 @@
                                                 </td>
                                                 <td><a class="btn btn-success" data-toggle="modal" data-target="#mod-success{{$request->id}}" type="button">Approve</a></td>
                                                 <td class="">
-                                                    <a href="{{ url('edit-request') }}/{{$request->id}}" class="btn btn-primary"><i class="icon mdi mdi-edit"></i></a>
+                                                    <a href="{{ url('view-request') }}/{{$request->id}}" class="btn btn-primary"><i class="icon mdi mdi-edit"></i></a>
                                                     <a data-toggle="modal" data-target="#mod-danger{{$request->id}}" type="button" class="btn btn-danger" href=""><i class="icon mdi mdi-delete"></i></a>
                                                 </td>
                                             </tr>

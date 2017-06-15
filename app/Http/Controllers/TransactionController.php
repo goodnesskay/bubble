@@ -76,6 +76,12 @@ class TransactionController extends Controller
         return view('dashboard.my-transaction',['users',Auth::User()])->with('requests',$requests);
     }
 
+    public function showSingleRequest($id)
+    {
+        $requests = Transaction::find($id);
+        return view('dashboard.view-transaction',['users'=>Auth::User()])->with('requests',$requests);
+    }
+
 
     /**
      * Show the form for editing the specified resource.
