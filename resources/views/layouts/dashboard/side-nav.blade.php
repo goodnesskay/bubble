@@ -13,7 +13,7 @@
                         </li>
                         <li class="parent"><a href="#"><i class="icon mdi mdi-tab"></i><span>Transactions</span></a>
                             <ul class="sub-menu">
-                                @if(Auth::User()->id === 1)
+                                @if(Auth::User()->status === 1)
                                     <li><a href="{{ url('all-transactions') }}">All</a></li>
                                 @endif
                                 <li><a href="{{ url('my-transactions') }}">My Requests</a></li>

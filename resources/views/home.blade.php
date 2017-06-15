@@ -3,13 +3,14 @@
 @section('content')
     <div class="be-content">
         <div class="main-content container-fluid">
+            @if(Auth::User()->status == '1')
             <div class="row">
                 <div class="col-xs-12 col-md-6 col-lg-3">
                     <div class="widget widget-tile">
                         <div id="spark1" class="chart sparkline"></div>
                         <div class="data-info">
-                            <div class="desc">New Users</div>
-                            <div class="value"><span class="indicator indicator-equal mdi mdi-chevron-right"></span><span data-toggle="counter" data-end="113" class="number">0</span>
+                            <div class="desc">Total Users</div>
+                            <div class="value"><span class="indicator indicator-equal mdi mdi-chevron-right"></span><span data-toggle="counter" data-end="{{ $users }}" class="number">0</span>
                             </div>
                         </div>
                     </div>
@@ -18,8 +19,8 @@
                     <div class="widget widget-tile">
                         <div id="spark2" class="chart sparkline"></div>
                         <div class="data-info">
-                            <div class="desc">Monthly Deals</div>
-                            <div class="value"><span class="indicator indicator-positive mdi mdi-chevron-up"></span><span data-toggle="counter" data-end="80" data-suffix="%" class="number">0</span>
+                            <div class="desc">Total Requests</div>
+                            <div class="value"><span class="indicator indicator-positive mdi mdi-chevron-up"></span><span data-toggle="counter" data-end="{{ $transactions }}" data-suffix="R" class="number">0</span>
                             </div>
                         </div>
                     </div>
@@ -29,7 +30,7 @@
                         <div id="spark3" class="chart sparkline"></div>
                         <div class="data-info">
                             <div class="desc">Completed</div>
-                            <div class="value"><span class="indicator indicator-positive mdi mdi-chevron-up"></span><span data-toggle="counter" data-end="532" class="number">0</span>
+                            <div class="value"><span class="indicator indicator-positive mdi mdi-chevron-up"></span><span data-toggle="counter" data-end="{{ $completeTransactions }}" class="number">0</span>
                             </div>
                         </div>
                     </div>
@@ -38,8 +39,8 @@
                     <div class="widget widget-tile">
                         <div id="spark4" class="chart sparkline"></div>
                         <div class="data-info">
-                            <div class="desc">Subscriptions</div>
-                            <div class="value"><span class="indicator indicator-negative mdi mdi-chevron-down"></span><span data-toggle="counter" data-end="113" class="number">0</span>
+                            <div class="desc">Uncompleted</div>
+                            <div class="value"><span class="indicator indicator-negative mdi mdi-chevron-down"></span><span data-toggle="counter" data-end="{{ $uncompleteTransactions }}" class="number">0</span>
                             </div>
                         </div>
                     </div>
@@ -103,7 +104,79 @@
                     </div>
                 </div>
             </div>
+            @else
+                <div class="row">
+                    <div class="col-xs-12 col-md-7 col-lg-4">
+                        <div class="widget widget-tile">
+                            <div id="spark2" class="chart sparkline"></div>
+                            <div class="data-info">
+                                <div class="desc">My Total Requests</div>
+                                <div class="value"><span class="indicator indicator-positive mdi mdi-chevron-up"></span><span data-toggle="counter" data-end="{{ $userTransactions }}" data-suffix="R" class="number">0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-7 col-lg-4">
+                        <div class="widget widget-tile">
+                            <div id="spark3" class="chart sparkline"></div>
+                            <div class="data-info">
+                                <div class="desc">Completed</div>
+                                <div class="value"><span class="indicator indicator-positive mdi mdi-chevron-up"></span><span data-toggle="counter" data-end="{{ $userCompleteTransactions }}" class="number">0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-7 col-lg-4">
+                        <div class="widget widget-tile">
+                            <div id="spark4" class="chart sparkline"></div>
+                            <div class="data-info">
+                                <div class="desc">Uncompleted</div>
+                                <div class="value"><span class="indicator indicator-negative mdi mdi-chevron-down"></span><span data-toggle="counter" data-end="{{ $userUncompleteTransactions }}" class="number">0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="widget widget-fullwidth be-loading">
+                            <div class="col-xs-12 col-md-4 col-md-offset-1">
+                                <div class="widget be-loading">
+                                    <div class="widget-head">
+                                    </div>
+                                    <div class="widget-chart-container">
+                                        <i>image here</i>
+                                        <div id="top-sales" style="height: 178px;"></div>
+                                        <div style="font-size:24px" class="chart-pie-counter">We guarantee 99.9% quality service</div>
+                                    </div>
+                                    <div class="chart-legend">
+                                        <table>
+                                            <a class="btn btn-block btn-primary btn-lg" href="{{ url('request-wash') }}">Request Wash</a>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-4 col-md-offset-1">
+                                <div class="widget be-loading">
+                                    <div class="widget-head">
+                                    </div>
+                                    <div class="widget-chart-container">
+                                        <i>image here</i>
+                                        <div id="top-sales" style="height: 178px;"></div>
+                                        <div style="font-size:24px" class="chart-pie-counter">Our Customer Support is 100%</div>
+                                    </div>
+                                    <div class="chart-legend">
+                                        <table>
+                                            <a class="btn btn-block btn-primary btn-lg" href="{{ url('contact') }}">Speak to Support Agent</a>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+            @endif
         </div>
     </div>
 

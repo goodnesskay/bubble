@@ -9,6 +9,11 @@ use DB;
 
 class UserController extends Controller
 {
+    /**
+     * NOTE:
+     * Super User: status:1
+     * Other User: status:2
+    */
 
     /**
      *  Password Reset View
