@@ -76,6 +76,12 @@ Route::group(['middleware' => ['web']], function () {
         'middleware'=>'auth'
     ]);
 
+    Route::get('view-charges/{id}/{type_of_vehicle}',[
+        'uses'=>'TransactionController@viewCharges',
+        'as'=>'view-charges',
+        'middleware'=>'auth'
+    ]);
+
     Route::get('all-transactions',[
         'uses'=>'TransactionController@showAll',
         'as'=>'all-transactions',

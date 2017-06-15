@@ -47,15 +47,15 @@
                                             <th style="width:15%;">Vehicle Type</th>
                                             <th style="width:10%;">Service Type</th>
                                             <th style="width:10%;">Wash Schedule</th>
-                                            <th style="width:17%;">Request Status</th>
-                                            <th style="width:10%;">Action</th>
+                                            <th style="width:14%;">Request Status</th>
+                                            <th style="width:14%;">Action</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         @foreach($requests as $request)
                                             <tr>
                                                 <td>LB01{{ $request->id }}89</td>
-                                                <td class="user-avatar cell-detail user-info">{{ $request->created_by }}</td>
+                                                <td class="user-avatar cell-detail user-info">{{ Auth::User()->full_name }}</td>
                                                 <td class="cell-detail">{{ $request->type_of_vehicle }}</td>
                                                 <td class="text-bold">{{ $request->service_type }}</td>
                                                 <td class="cell-detail"><i class="icon mdi mdi-time "></i> {{ $request->wash_schedule }}</td>
@@ -68,6 +68,7 @@
                                                 </td>
                                                 <td class="">
                                                     <a href="{{ url('edit-request') }}/{{$request->id}}" class="btn btn-primary"><i class="icon mdi mdi-edit"></i></a>
+                                                    <a href="{{ url('view-charges') }}/{{$request->id}}/{{ str_slug($request->type_of_vehicle) }}" class="btn btn-success"><i class="icon mdi mdi-eye"></i></a>
                                                     <a data-toggle="modal" data-target="#mod-danger{{$request->id}}" type="button" class="btn btn-danger" href=""><i class="icon mdi mdi-delete"></i></a>
                                                 </td>
                                             </tr>

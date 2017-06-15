@@ -47,9 +47,9 @@
                                             <th style="width:15%;">Vehicle Type</th>
                                             <th style="width:10%;">Service Type</th>
                                             <th style="width:10%;">Wash Schedule</th>
-                                            <th style="width:17%;">Request Status</th>
+                                            <th style="width:12%;">Request Status</th>
                                             <th style="width:5%;">Approve</th>
-                                            <th style="width:10%;">Action</th>
+                                            <th style="width:15%;">Action</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -70,6 +70,7 @@
                                                 <td><a class="btn btn-success" data-toggle="modal" data-target="#mod-success{{$request->id}}" type="button">Approve</a></td>
                                                 <td class="">
                                                     <a href="{{ url('view-request') }}/{{$request->id}}" class="btn btn-primary"><i class="icon mdi mdi-edit"></i></a>
+                                                    <a href="{{ url('view-charges') }}/{{$request->id}}/{{ str_slug($request->type_of_vehicle) }}" class="btn btn-success"><i class="icon mdi mdi-eye"></i></a>
                                                     <a data-toggle="modal" data-target="#mod-danger{{$request->id}}" type="button" class="btn btn-danger" href=""><i class="icon mdi mdi-delete"></i></a>
                                                 </td>
                                             </tr>

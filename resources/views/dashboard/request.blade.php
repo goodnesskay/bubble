@@ -16,7 +16,6 @@
                                     <p class="text-center">{{ session('alert') }}</p>
                                 </div>
                             @endif
-
                             @if (count($errors) > 0)
                                 <div class="alert alert-danger alert-dismissible" role="alert">
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -60,13 +59,13 @@
                                     <label class="col-sm-3 control-label">Service Type</label>
                                     <div class="col-sm-6">
                                         <select name="service_type" class="form-control">
-                                            <option value="">Select Service type</option>
-                                            <option value="">Hand Wash (Between N500 - N800)</option>
-                                            <option value="">Interior Wash (Between  N700 - N1000)</option>
-                                            <option value="">Exterior Wash (Between N800 - N1200)</option>
-                                            <option value="">Engine Wash (Between N1000 - N1200)</option>
-                                            <option value="">Full Detail (Between N1500 - N2000)</option>
-                                            <option value="">Interior Wash & Exterior Wash (Between  )</option>
+                                            <option >Select Service type</option>
+                                            <option >Hand Wash (Between N500 - N800)</option>
+                                            <option >Interior Wash (Between  N700 - N1000)</option>
+                                            <option >Exterior Wash (Between N800 - N1200)</option>
+                                            <option >Engine Wash (Between N1000 - N1200)</option>
+                                            <option >Full Detail (Between N1500 - N2000)</option>
+                                            <option >Interior Wash & Exterior Wash (Between  )</option>
                                          </select>
                                     </div>
                                 </div>

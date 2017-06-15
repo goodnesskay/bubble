@@ -51,7 +51,8 @@ class TransactionController extends Controller
 
         if ($requests->save())
         {
-            return redirect()->back()->with('alert','Your request has been successfully made. You will receive a call from our Agent in some minutes');
+//            return redirect()->back()->with('alert','Your request has been successfully made. You will receive a call from our Agent in some minutes');
+            return redirect()->route('view-charges',['id'=>$requests->id,'type_of_vehicle'=>str_slug($requests->type_of_vehicle)])->with('alert','Your request has been successfully made. You will receive a call from our Agent in some minutes');
             Mail::to($request->user())->send(new Transactions($transaction));
         }else{
             return redirect()->back()->withErrors($validator);
