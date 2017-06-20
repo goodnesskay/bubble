@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Transaction;
-use App\Mail;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\Transactions;
 use Carbon\Carbon;
 use Auth;
 use DB;
@@ -51,9 +52,23 @@ class TransactionController extends Controller
 
         if ($requests->save())
         {
-//            return redirect()->back()->with('alert','Your request has been successfully made. You will receive a call from our Agent in some minutes');
+            $email = Auth::User()->email;
+            $content ="Hello boys";
             return redirect()->route('view-charges',['id'=>$requests->id,'type_of_vehicle'=>str_slug($requests->type_of_vehicle)])->with('alert','Your request has been successfully made. You will receive a call from our Agent in some minutes');
-            Mail::to($request->user())->send(new Transactions($transaction));
+            //Mail::to($email)->send(new Transactions($transaction));
+            Mail::send('mail.request-success', ['title' => $title, 'content' => $content], function ($message)
+            {
+
+                $message->from('me@gmail.com', 'Godness Kayode');
+
+                $message->to(Auth::User()->email);
+
+                //Attach file
+
+                //Add a subject
+                $message->subject("Hello from Scotch");
+
+            });
         }else{
             return redirect()->back()->withErrors($validator);
         }
@@ -151,10 +166,47 @@ class TransactionController extends Controller
 
         if ($requests->save())
         {
-            return redirect()->back()->with('alert','Your have successfully approved #LB01'.$requests->id.'89');
+            return redirect()->route('comment',['id'=>$requests->id,'type_of_vehicle'=>str_slug($requests->type_of_vehicle)])->with('alert','Your have successfully approved #LB01'.$requests->id.'89');
             Mail::to($request->user())->send(new RequestComplete($transaction));
         }else{
             return redirect()->back()->with('alert','Request not successful');
+        }
+
+    }
+
+    /**
+     *  get comment view
+     *
+     * */
+    public function getComment($id)
+    {
+        $requests = Transaction::find($id);
+        return view('dashboard.comment',['users'=>Auth::User()])->with('requests',$requests);
+    }
+
+    /**
+     *  Post your comment
+     *
+     * */
+    public function postComment(Request $request,$id)
+    {
+
+        $this->validate($request,[
+            'rating'=>'required',
+            'comment'=>'required'
+        ]);
+
+        $requests = Transaction::find($id);
+        $requests->status=1;
+        $requests->rating= $request->input('rating');
+        $requests->comment = $request->input('comment');
+
+        if ($requests->save())
+        {
+            return redirect()->route('comment',['id'=>$requests->id,'type_of_vehicle'=>str_slug($requests->type_of_vehicle)])->with('alert','Your have successfully approved #LB01'.$requests->id.'89. Please, give us a comment on our service for us to serve you better');
+            //Mail::to($request->user())->send(new RequestComplete($transaction));
+        }else{
+            return redirect()->back()->withErrors($validator);
         }
     }
 
@@ -168,9 +220,9 @@ class TransactionController extends Controller
     {
         $requests = Transaction::find($id);
 
-        if($requests->destroy())
+        if($requests->delete())
         {
-            return redirect()->back()->with('alert','Your request has been successfully made. Your Transaction has been cancelled');
+            return redirect()->back()->with('alert','This request has been deleted successfully. Your Transaction has been cancelled');
             Mail::to($request->user())->send(new RequestDestroy($transaction));
         }else{
             return redirect()->back()->with('alert'.'Sorry! Your request was not completed');

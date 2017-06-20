@@ -145,8 +145,9 @@
                                     <div class="widget-head">
                                     </div>
                                     <div class="widget-chart-container">
-                                        <i>image here</i>
-                                        <div id="top-sales" style="height: 178px;"></div>
+                                        <img src="{{ asset('assets/img/a.png') }}" alt="image" style="width:50%;"
+                                             class="center-block img-responsive"/><br>
+                                        <div id="top-sales" style="height: 138px;"></div>
                                         <div style="font-size:24px" class="chart-pie-counter">We guarantee 99.9% quality service</div>
                                     </div>
                                     <div class="chart-legend">
@@ -161,13 +162,14 @@
                                     <div class="widget-head">
                                     </div>
                                     <div class="widget-chart-container">
-                                        <i>image here</i>
-                                        <div id="top-sales" style="height: 178px;"></div>
+                                        <img src="{{ asset('assets/img/d.png') }}" alt="image" style="width:50%;"
+                                             class="center-block img-responsive"/><br>
+                                        <div id="top-sales" style="height: 138px;"></div>
                                         <div style="font-size:24px" class="chart-pie-counter">Our Customer Support is 100%</div>
                                     </div>
                                     <div class="chart-legend">
                                         <table>
-                                            <a class="btn btn-block btn-primary btn-lg" href="{{ url('contact') }}">Speak to Support Agent</a>
+                                            <a data-toggle="modal" data-target="#mod-success" class="btn btn-block btn-primary btn-lg" >Speak to Support Agent</a>
                                         </table>
                                     </div>
                                 </div>
@@ -179,6 +181,38 @@
             @endif
         </div>
     </div>
-
+    <!--Modal Alerts-->
+    <div id="mod-success" tabindex="-1" role="dialog" style="" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" data-dismiss="modal" aria-hidden="true" class="close"><span class="mdi mdi-close"></span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center">
+                        <div class="text-success"><span class="modal-main-icon mdi mdi-check"></span></div>
+                        <h3>Awesome!</h3>
+                        <p>You want to speak with one of our support agents? Please, do send us a mail at
+                            <br>
+                            <b><i class="mdi mdi-mail-send"></i> hello@luxurybubbles.com.ng</b>
+                            <br>
+                            or call any of our help line
+                            <br>
+                            <b>
+                                <i class="mdi mdi-phone"></i> 08077620751
+                                <i class="mdi mdi-phone"></i> 08146124196
+                                <i class="mdi mdi-phone"></i> 08037862317
+                            </b>
+                        </p>
+                        <div class="xs-mt-50">
+                            <button type="button" data-dismiss="modal" class="btn btn-space btn-default">Cancel</button>
+                            <a type="button" data-dismiss="modal" class="btn btn-space btn-success">Thanks</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer"></div>
+            </div>
+        </div>
     </div>
+
 @endsection

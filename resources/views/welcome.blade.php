@@ -9,7 +9,7 @@
                     <h1 class="title">Let's do the trouble for you</h1>
                     <p class="up-type-title"> We <span class="animated-text" id="animated-text"></span></p>
                     <p class="p-details">
-                        We bring the car wash to anywhere you are. We give you the best than you imagine.
+                        We bring the car wash to where you are. We give you the best than you imagine.
                     </p>
                     <div class="header-app-icons">
                         <ul>
@@ -43,15 +43,19 @@
             </div>
             <!-- first row -->
             <div class="row">
-                <div class="col-md-6 text-justify">
-                        <p style="text-space:200px">
-                            The Luxury Bubbles is a mobile hand car wash serving the ancient town of Ile Ife. At The Luxury Bubbles, we share the belief that washing a car is just not an act but an experience, hence, we have created a system that is not just quick, efficient and cost effective, but also convenient.
-                            <br>
-                            The Luxury Bubbles offers her esteemed customers the luxury of having their cars washed at their preferred location. Our main goal is for our customers to feel good every time they see our logo.
-                        </p>
+                <div class="col-md-6 col-md-offset-1 text-center">
+                    <p style="margin-top:150px">
+                        The Luxury Bubbles is a mobile hand car wash serving the ancient town of Ile Ife.
+                        At The Luxury Bubbles, we share the belief that washing a car is not
+                        just an act but an experience, hence, we have created a system that is not just quick,
+                        efficient and cost effective, but also convenient and safe.
+                        The Luxury Bubbles offers her esteemed customers the luxury of
+                        having their cars washed at their preferred location.
+                        Our main goal is to provide the best washing experience to our customers.
+                    </p>
                 </div>
-                <div class="col-md-6">
-                        <img src="assets/img/web-design.png" alt="{{ config('app.name') }} image"  class="img-responsive" />
+                <div class="col-md-5">
+                        <img src="{{ asset('assets/img/ios.png') }}" alt="{{ config('app.name') }} image"  class="img-responsive" />
                 </div>
             </div>
         </div>
@@ -66,7 +70,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="img-container">
-                            <img src="assets/img/web-design.png" alt="image" style="width:50%;"
+                            <img src="{{ asset('assets/img/a.png') }}" alt="image" style="width:50%;"
                                  class="center-block img-responsive"/>
                         </div>
                         <div class="text-center">
@@ -75,7 +79,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="img-container">
-                            <img src="assets/img/web-design.png" alt="image" style="width:50%;"
+                            <img src="{{ asset('assets/img/b.png') }}" alt="image" style="width:50%;"
                                  class="center-block img-responsive"/>
                         </div>
                         <div class="text-center">
@@ -85,7 +89,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="img-container">
-                            <img src="assets/img/web-design.png" alt="image" style="width:50%;"
+                            <img src="{{ asset('assets/img/c.png') }}" alt="image" style="width:50%;"
                                  class="center-block img-responsive"/>
                         </div>
                         <div class="text-center">
@@ -119,102 +123,57 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="card card-profile card-plain">
-                        <div class="card-avatar">
-                            <a href="#link">
-                                <img class="img" src="{{ asset('assets/img/team/3.jpg') }}" alt="Services" />
-                            </a>
-                        </div>
-                        <div class="content">
-                            <h4 class="card-title">Interior Wash</h4>
-                            <h6 class="category text-muted">N700 - N1000</h6>
-                            <p class="card-description">
-                                This involves hand washing both the exterior and interior of the vehicle. The interior is also vacuumed.
-                            </p>
-                            <div class="footer">
-                                <a href="{{ url('register') }}" class="btn btn-default">Wash Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card card-profile card-plain">
-                        <div class="card-avatar">
-                            <a href="#link">
-                                <img class="img" src="{{ asset('assets/img/team/3.jpg') }}" alt="Services" />
-                            </a>
-                        </div>
-                        <div class="content">
-                            <h4 class="card-title">Hand Wash</h4>
-                            <h6 class="category text-muted">N500 - N800</h6>
-                            <p class="card-description">
-                                This involves the conventional hand washing of the exterior part of the vehicle with wash mitts and chemicals. This service doesn’t involve working on the interior of the car, we don’t detail the exterior too.
-                            </p>
-                            <div class="footer">
-                                <a href="{{ url('register') }}" class="btn btn-default">Wash Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="card card-profile card-plain">
-                        <div class="card-avatar">
-                            <a href="#link">
-                                <img class="img" src="{{ asset('assets/img/team/3.jpg') }}" alt="Services" />
-                            </a>
-                        </div>
-                        <div class="content">
-                            <h4 class="card-title">Exterior Wash</h4>
-                            <h6 class="category text-muted">N800 - N1200</h6>
-                            <p class="card-description">
-                                This involves hand washing both the exterior and interior. The interior is vacuumed and detailing is done on the exterior; Waxing and Polishing, etc.
-                            </p>
-                            <div class="footer">
-                                <a href="{{ url('register') }}" class="btn btn-default">Wash Now</a>
-                            </div>
-                            <br><br>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="card card-profile card-plain">
-                        <div class="card-avatar">
-                            <a href="#link">
-                                <img class="img" src="{{ asset('assets/img/team/3.jpg') }}" alt="Services" />
-                            </a>
-                        </div>
-                        <div class="content">
-                            <h4 class="card-title">Engine Detail</h4>
-                            <h6 class="category text-muted">N1000 - N1200</h6>
-                            <p class="card-description">
-                                This involves hand washing the exterior of the car and detailing the engine. The engine is degreased and wiped clean of grease and grime.
-                            </p>
-                            <div class="footer">
-                                <a href="{{ url('register') }}" class="btn btn-default">Wash Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-
-                </div>
-
-
-
-                <div class="col-md-4">
-                    <div class="card card-profile card-plain">
-                        <div class="card-avatar">
-                            <a href="#link">
-                                <img class="img" src="{{ asset('assets/img/team/3.jpg') }}" alt="Services" />
-                            </a>
-                        </div>
                         <div class="content">
                             <h4 class="card-title">Full Detail</h4>
                             <h6 class="category text-muted">N1500 - N2000</h6>
                             <p class="card-description">
-                                This involves hand washing both the exterior and interior, detailing the exterior and interior and also the engine.
+                                This involves hand washing both the exterior and interior and also detailing
+                                the exterior and interior.
+                            </p>
+                            <div class="footer">
+                                <a href="{{ url('register') }}" class="btn btn-default">Wash Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-profile card-plain">
+                        <div class="content">
+                            <h4 class="card-title">Interior Wash</h4>
+                            <h6 class="category text-muted">N700 - N1000</h6>
+                            <p class="card-description">
+                                This involves hand washing both the exterior and interior of the vehicle. The interior is also detailed.
+                            </p>
+                            <div class="footer">
+                                <a href="{{ url('register') }}" class="btn btn-default">Wash Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card card-profile card-plain">
+                        <div class="content">
+                            <h4 class="card-title">Exterior Wash</h4>
+                            <h6 class="category text-muted">N800 - N1200</h6>
+                            <p class="card-description">
+                                This involves hand washing both the exterior and interior. The interior and exterior are also detailed.
+                            </p>
+                            <div class="footer">
+                                <a href="{{ url('register') }}" class="btn btn-default">Wash Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card card-profile card-plain">
+                        <div class="content">
+                            <h4 class="card-title">Hand Wash</h4>
+                            <h6 class="category text-muted">N500 - N700</h6>
+                            <p class="card-description">
+                                This involves the conventional hand washing of the exterior part of the vehicle with wash mitts and chemicals.
+                                This service doesn’t involve working on the interior of the car, we don’t detail the exterior too.
                             </p>
                             <div class="footer">
                                 <a href="{{ url('register') }}" class="btn btn-default">Wash Now</a>
@@ -283,34 +242,5 @@
         </div>
     </section>
     <!-- End clients -->
-    <!-- Subscribe -->
-    <div class="subscribe bg-primary">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h3 class="title">Subscribte to our news letter</h3>
-                </div>
-                <div class="col-md-6 text-right">
-                    <form method="post" id="subscribe">
-                        <div class="row">
-                            <div class="col-sm-8">
-                                <div class="input-group">
-                                    <span class="input-group-addon">
-                                                <i class="fa fa-envelope"></i>
-                                            </span>
-                                    <div class="form-group is-empty">
-                                        <input type="email" value="" placeholder="Your Email..." class="form-control"><span class="material-input"></span></div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <button type="button" class="btn btn-default">Subscribe</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End subscribe -->
 
 @endsection

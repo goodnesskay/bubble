@@ -1,0 +1,14 @@
+{
+    "name": "goodnesskay/laravelappbasic",
+    "description": "A Laravel package that handles basic information of your Laravel project without hard coding",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Goodness Toluwanimi Kayode",
+            "email": "gtkbrain@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}

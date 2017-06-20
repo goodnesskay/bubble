@@ -43,11 +43,12 @@
                                             <th style="width:10%;">
                                                 Request ID
                                             </th>
-                                            <th style="width:20%;">Request From</th>
-                                            <th style="width:15%;">Vehicle Type</th>
+                                            <th style="width:15%;">Request From</th>
+                                            <th style="width:11%;">Vehicle Type</th>
                                             <th style="width:10%;">Service Type</th>
                                             <th style="width:10%;">Wash Schedule</th>
                                             <th style="width:14%;">Request Status</th>
+                                            <th style="width:10%;">Approve</th>
                                             <th style="width:14%;">Action</th>
                                         </tr>
                                         </thead>
@@ -62,16 +63,41 @@
                                                 <td>
                                                     @if($request->status == 1)
                                                         <button class="btn btn-info">Completed</button>
+                                                    @elseif($request->status == 1 && isset($request->rating) && isset($request->comment))
+                                                        <button class="btn btn-danger">Comment Required</button>
                                                     @else
                                                         <button class="btn btn-warning">In Progress</button>
                                                     @endif
                                                 </td>
+                                                <td><a class="btn btn-success" data-toggle="modal" data-target="#mod-success{{$request->id}}" type="button">Approve</a></td>
                                                 <td class="">
                                                     <a href="{{ url('edit-request') }}/{{$request->id}}" class="btn btn-primary"><i class="icon mdi mdi-edit"></i></a>
                                                     <a href="{{ url('view-charges') }}/{{$request->id}}/{{ str_slug($request->type_of_vehicle) }}" class="btn btn-success"><i class="icon mdi mdi-eye"></i></a>
                                                     <a data-toggle="modal" data-target="#mod-danger{{$request->id}}" type="button" class="btn btn-danger" href=""><i class="icon mdi mdi-delete"></i></a>
                                                 </td>
                                             </tr>
+
+                                            <div id="mod-success{{$request->id}}" tabindex="-1" role="dialog" style="" class="modal fade">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" data-dismiss="modal" aria-hidden="true" class="close"><span class="mdi mdi-close"></span></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="text-center">
+                                                                <div class="text-success"><span class="modal-main-icon mdi mdi-check"></span></div>
+                                                                <h3>Awesome!</h3>
+                                                                <p>You want to approve that this request has been attended to. Nice job</p>
+                                                                <div class="xs-mt-50">
+                                                                    <button type="button" data-dismiss="modal" class="btn btn-space btn-default">Cancel</button>
+                                                                    <a href="{{ url('approve-request') }}/{{$request->id}}" class="btn btn-space btn-success">Approve</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
 
                                             <!--Modal Alerts-->
                                             <div id="mod-danger{{$request->id}}" tabindex="-1" role="dialog" style="" class="modal fade">

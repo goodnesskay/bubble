@@ -8,7 +8,8 @@ class Transaction extends Model
 {
     protected $fillable = ['type_of_vehicle','number_of_cars','location_for_the_wash',
                                     'wash_schedule','water_availability',
-                                    'service_type','created_by','status'];
+                                    'service_type','created_by','status',
+                                    'rating','comment'];
 
     public function user()
     {

@@ -22,6 +22,8 @@ class CreateTransactionsTable extends Migration
             $table->string('water_availability');
             $table->string('service_type');
             $table->integer('created_by');
+            $table->string('rating');
+            $table->text('comment');
             $table->integer('status');
             $table->timestamps();
         });

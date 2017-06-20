@@ -76,7 +76,22 @@ class RegisterController extends Controller
             'password' => bcrypt($data['password']),
         ]);
 
+        $email = $data['email'];
         // Mail upon successful registration
-        Mail::to($data->user())->send(new Registeration($user));
+        Mail::to($email)->send(new Registeration($user));
+        Mail::send('emails.send', ['title' => $title, 'content' => $content], function ($message) use ($attach)
+        {
+
+            $message->from('me@gmail.com', 'Christian Nwamba');
+
+            $message->to('chrisn@scotch.io');
+
+            //Attach file
+            $message->attach($attach);
+
+            //Add a subject
+            $message->subject("Hello from Scotch");
+
+        });
     }
 }

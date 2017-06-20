@@ -2,9 +2,7 @@
 
 @section('content')
     <div class="be-content">
-
         <div class="main-content container-fluid">
-            <!--Basic Elements-->
             <div class="row">
                 <div class="col-md-12">
                     <div class="panel panel-default panel-border-color panel-border-color-primary">
@@ -45,6 +43,19 @@
                                     <label class="col-sm-3 control-label">Your Location For the Wash</label>
                                     <div class="col-sm-6">
                                         <textarea rows="5" placeholder="Your Location" class="form-control" disabled>{{ Auth::User()->your_location }}</textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Rating</label>
+                                    <div class="col-md-3 col-xs-7">
+                                        <input  value="{{ $requests->rating }}" class="form-control" disabled>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Comment</label>
+                                    <div class="col-md-3 col-xs-7">
+                                        <input  value="{{ $requests->comment }}" class="form-control" disabled>
                                     </div>
                                 </div>
                             </form>

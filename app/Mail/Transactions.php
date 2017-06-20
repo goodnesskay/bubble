@@ -29,7 +29,7 @@ class Transactions extends Mailable
      */
     public function build()
     {
-        return $this->view('mail.request-success')->with([
+        return $this->from('gtkbrain@gmail.com')->view('mail.request-success')->with([
             'requestLocation'=>$this->transaction->your_location,
             'requestVehicleType'=>$this->transaction->vehicle_type,
             'requestVehicleNo'=>$this->transaction->no_of_vehicles,

@@ -7,7 +7,7 @@
                 <div class="splash-container">
                     <div class="panel panel-default panel-border-color panel-border-color-primary">
                         <div class="panel-heading">
-                            <a href="{{ url('/') }}"><img src="dashboard/img/logo-xx.png" alt="logo" width="102" height="27" class="logo-img"></a>
+                            <a href="{{ url('/') }}"><img src="dashboard/img/logo-xx.png" alt="logo" width="102" height="100" class="logo-img"></a>
                             <span class="splash-description">Continue with us and keep enjoying the best services.</span>
                         </div>
                         <div class="panel-body">

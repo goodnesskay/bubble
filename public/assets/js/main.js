@@ -39,7 +39,7 @@
              "love vehicles",
              "turn your vehicles to new",
              "bring the car wash to you",
-             "are mobile and experts at this"
+             "are mobile and are experts at this"
          ],
          typeSpeed: 50,
          loop: true,

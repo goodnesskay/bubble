@@ -29,7 +29,7 @@ class Registeration extends Mailable
      */
     public function build()
     {
-        return $this->view('mail.registration-success')->with([
+        return $this->from('gtkbrain@gmail.com')->view('mail.registration-success')->with([
             'userFullName' => $this->user->full_name,
             'userEmail' => $this->user->email
         ]);

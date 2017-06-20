@@ -12,10 +12,15 @@
 */
 
 Route::group(['middleware' => ['web']], function () {
+
     Route::get('/',[
         'uses'=>'FrontEndController@welcome',
         'as'=>'/'
     ]);
+
+    Route::get('/mail',function (){
+        return view('mail.registration-success');
+});
 
     Route::get('/faq',[
         'uses'=>'FrontEndController@faq',
@@ -73,6 +78,18 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('request-wash',[
         'uses'=>'TransactionController@store',
         'as'=>'request-wash',
+        'middleware'=>'auth'
+    ]);
+
+    Route::get('comment/{id}/{type_of_vehicle}',[
+        'uses'=>'TransactionController@getComment',
+        'as'=>'comment',
+        'middleware'=>'auth'
+    ]);
+
+    Route::post('comment/{id}/{type_of_vehicle}',[
+        'uses'=>'TransactionController@postComment',
+        'as'=>'comment',
         'middleware'=>'auth'
     ]);
 
