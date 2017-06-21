@@ -14,7 +14,7 @@
     <![endif]-->
     <link rel="stylesheet" href="{{asset('dashboard/css/style.css')}}" type="text/css"/>
 </head>
-<body style="background-image: url('../../assets/img/bg-1.jpg')" class="be-splash-screen">
+<body style="background-image: url('../../assets/img/bg.jpg')" class="be-splash-screen">
 
 @yield('content')
 

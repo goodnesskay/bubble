@@ -1,25 +1,24 @@
 @extends('layouts.master')
 
 @section('banner')
-    <div class="single-page-header header-filter" data-parallax="active" style="background-image: url('assets/img/bg.jpg');">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 text-center">
-                    <br>
-                    <h1 class="title">Frequently Asked Questions</h1>
-                    <br>
-                    <div class="post-author">
-                        <p>
-                            <a href="#author"><i>Know more about <br> how Luxury Bubbles works</i></a>
-                        </p>
+    <header class="pt100 pb100 parallax-window-2" data-parallax="scroll" data-speed="0.5" data-image-src="assets/img/bg/img-bg-17.jpg" data-positionY="1000">
+        <div class="intro-body text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 pt50">
+                        <h1 class="brand-heading font-montserrat text-uppercase color-light" data-in-effect="fadeInDown">
+                            Frequently Asked Questions
+                        </h1>
                     </div>
                 </div>
             </div>
+
         </div>
-    </div>
+    </header>
 @endsection
 
 @section('content')
+<div class="bg-transparent pt75">
     <div class="main">
         <div class="container">
             <div class="section section-text">
@@ -128,5 +127,5 @@
             </div>
         </div>
     </div>
-
+</div>
 @endsection

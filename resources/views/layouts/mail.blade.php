@@ -161,7 +161,7 @@
         <td style="padding: 40px 10px;width: 100%;font-size: 12px; font-family: sans-serif; line-height:18px; text-align: center; color: #888888;" class="x-gmail-data-detectors">
             <webversion style="color:#cccccc; text-decoration:underline; font-weight: bold;">View as a Web Page</webversion>
             <br><br>
-            {{ config('app.name') }}<br>Ile-Ife, Osun State, Nigeria, <br> OR,<br>(123) 456-7890
+            {{ config('app.name') }}<br>Ile-Ife, Osun State, Nigeria, <br> OR,<br>08077620751
             <br><br>
             <unsubscribe style="color:#888888; text-decoration:underline;">unsubscribe</unsubscribe>
         </td>

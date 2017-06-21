@@ -19,7 +19,7 @@
             <table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="max-width: 600px;">
                 <tr>
                     <td style="padding: 20px 0; text-align: center">
-                        <img src="http://placehold.it/200x50" aria-hidden="true" width="200" height="50" alt="alt_text" border="0" style="height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
+                        <img src="{{ asset('assets/img/logo.png') }}" aria-hidden="true" width="100" height="50" alt="alt_text" border="0" style="height: auto; background: #ffffff; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
                     </td>
                 </tr>
             </table>
@@ -31,7 +31,7 @@
                 <!-- Hero Image, Flush : BEGIN -->
                 <tr>
                     <td bgcolor="#ffffff">
-                        <img src="http://placehold.it/1200x600" aria-hidden="true" width="600" height="" alt="alt_text" border="0" align="center" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;" class="g-img">
+
                     </td>
                 </tr>
                 <!-- Hero Image, Flush : END -->
@@ -44,7 +44,14 @@
                                 <td style="padding: 40px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
                                     <h1 style="margin: 0 0 10px 0; font-family: sans-serif; font-size: 24px; line-height: 27px; color: #333333; font-weight: normal;">Hi { UserName }</h1>
                                     <p style="margin: 0;">
-                                        Thanks for registering on our platform. We love you and are ready to serve you with the best of services assuring you safety and comfort.
+                                        Thanks for registering on our platform. We love you and are ready
+                                        to serve you with the best of services assuring you safety and comfort.
+                                    </p><br>
+                                    <p style="margin: 0;">
+                                        <b>
+                                            Cheers, <br>
+                                            Luxury Bubbles Team
+                                        </b>
                                     </p>
                                 </td>
                             </tr>

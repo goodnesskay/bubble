@@ -1,106 +1,54 @@
-<!doctype html>
-<html lang="zxx">
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <title>{{ config('app.name') }} | Better care for your vehicle at your convenience</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="luxury bubble, nigeria, mobile car wash service in Nigeria,vehicles">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ config('app.name') }} | @yield('title')</title>
-    <!-- Google fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
-    <!-- CSS Files -->
-    <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('assets/css/font-awesome.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('assets/css/material-kit.css') }}" rel="stylesheet" />
-    <link href="{{ asset('assets/css/owl.carousel.css') }}" rel="stylesheet" />
-    <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" />
-    <!-- favicon -->
-    <link rel="icon" href="{{ asset('assets/img/favicon.ico') }}">
-    <!-- Colors -->
-    <link rel="stylesheet" href="{{ asset('assets/css/colors/cyan.css') }}">
-    <!-- Skin switcher -->
-    <!-- Manually link your desire skin -->
-    <style type="text/css">
-        .skins {
-            position: fixed;
-            top: 190px;
-            left: -120px;
-            transition: .3s ease-in-out;
-            z-index: 1000;
-        }
+    <meta name="author" content="CodebagNg">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
-        .skins:hover {
-            left: 0;
-        }
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="{{ asset('assets/img/favicon.png') }}">
 
-        .skin-colors {
-            list-style: none;
-            padding: 20px;
-            margin: 0;
-            background-color: #fff;
-            width: 120px;
-            border: 1px solid #e7e7e7;
-        }
+    <!-- Load Core CSS
+    =====================================-->
+    <link rel="stylesheet" href="{{ asset('assets/css/core/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/core/animate.min.css') }}">
 
-        .skin-colors li {
-            position: relative;
-            display: inline-block;
-            width: 32px;
-            height: 32px;
-            cursor: pointer;
-            margin: -3px;
-            line-height: 0;
-            transition: .3s ease-in-out;
-        }
+    <!-- Load Main CSS
+    =====================================-->
+    <link rel="stylesheet" href="{{ asset('assets/css/main/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/main/setting.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/main/hover.css') }}">
 
-        .skin-colors li:hover {
-            opacity: .7;
-        }
 
-        .skin-colors li.active::before {
-            content: "\f00c";
-            font-family: FontAwesome;
-            font-size: 20px;
-            width: 32px;
-            line-height: 32px;
-            text-align: center;
-            position: absolute;
-            color: #fff;
-        }
+    <link rel="stylesheet" href="{{ asset('assets/css/color/pasific.css') }}">
 
-        .skin-toggler {
-            position: absolute;
-            display: inline-block;
-            width: 50px;
-            height: 50px;
-            right: -49px;
-            top: 0;
-            background-color: #fff;
-            font-size: 30px;
-            text-align: center;
-            line-height: 50px;
-            color: #888;
-            border: 1px solid #e7e7e7;
-            border-left: 0;
-        }
+    <link rel="stylesheet" href="{{ asset('assets/css/icon/font-awesome.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/icon/et-line-font.css') }}">
 
-        .skin-toggler .fa {
-            transform: rotate(30deg);
-            -webkit-transition: 2s;
-            -moz-transition: 2s;
-            -ms-transition: 2s;
-            -o-transition: 2s;
-            transition: 2s;
-            animation: gear 1s infinite;
-        }
+    <!-- Load JS
+    HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+    WARNING: Respond.js doesn't work if you view the page via file://
+    =====================================-->
 
-        @keyframes gear {
-            0% {
-                transform: rotate(0deg)
-            }
-            100% {
-                transform: rotate(360deg)
-            }
-        }
-    </style>
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
+<body  id="page-top" data-spy="scroll" data-target=".navbar" data-offset="100">
 
-<body id="up">
+<div id="pageloader">
+    <div class="loader-item">
+        <img src="{{ asset('assets/img/other/puff.svg') }}" alt="page loader">
+    </div>
+</div>
+
+<a href="#page-top" class="go-to-top">
+    <i class="fa fa-long-arrow-up"></i>
+</a>
+
