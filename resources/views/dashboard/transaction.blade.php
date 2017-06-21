@@ -56,7 +56,7 @@
                                         @foreach($requests as $request)
                                             <tr>
                                                 <td>LB01{{ $request->id }}89</td>
-                                                <td class="user-avatar cell-detail user-info"><img src="assets/img/avatar6.png" alt="Avatar"><span>{{ $request->created_by }}</span><span class="cell-detail-description">Developer</span></td>
+                                                <td class="user-avatar cell-detail user-info"><span>{{ $request->created_by }}</span></td>
                                                 <td class="cell-detail">{{ $request->type_of_vehicle }}</td>
                                                 <td class="text-bold">{{ $request->service_type }}</td>
                                                 <td class="cell-detail"><i class="icon mdi mdi-time "></i> {{ $request->wash_schedule }}</td>
