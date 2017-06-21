@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title','Register & Wash Now')
 @section('content')
     <div class="be-wrapper be-login be-signup">
         <div class="be-content">

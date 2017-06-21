@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title','Sign In')
 @section('content')
     <div class="be-wrapper be-login">
         <div class="be-content">
@@ -41,10 +41,10 @@
                                 <div class="form-group login-submit">
                                     <button data-dismiss="modal" type="submit" class="btn btn-primary btn-xl">Sign me in</button>
                                 </div>
+                                <div class="splash-footer"><span>Don't have an account? <a href="{{ url('register') }}">Sign Up</a></span></div>
                             </form>
                         </div>
                     </div>
-                    <div class="splash-footer"><span>Don't have an account? <a href="{{ url('register') }}">Sign Up</a></span></div>
                 </div>
             </div>
         </div>
