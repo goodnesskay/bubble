@@ -20,7 +20,7 @@
                     <div class="invoice">
                         <div class="row invoice-header">
                             <div class="col-xs-7">
-                                <div class="invoice-logo"></div>
+                                <img src="{{ asset('dashboard/img/logo-symbol.png') }}" width="80px">
                             </div>
                             <div class="col-xs-5 invoice-order"><span class="invoice-id">Invoice #LB01{{ $requests->id }}89</span><span class="incoice-date">{{ date('D-M-Y') }}</span></div>
                         </div>
@@ -33,14 +33,19 @@
                             <div class="col-md-12">
                                 <table class="invoice-details">
                                     <tr>
-                                        <th style="width:60%">Description</th>
-                                        <th style="width:17%" class="hours">Hours</th>
-                                        <th style="width:15%" class="amount">Amount</th>
+                                        <th style="width:20%">Request</th>
+                                        <th style="width:15%" class="hours">Wash Schedule</th>
+                                        <th style="width:20%" class="amount">Wash Location</th>
+                                    </tr>
+                                    <tr>
+                                        <th style="font-weight:normal;">{{ $requests->service_type }}</th>
+                                        <th style="font-weight:normal;">{{ $requests->wash_schedule }}</th>
+                                        <th style="font-weight:normal;">{{ $requests->location_for_the_wash }}</th>
                                     </tr>
                                     <tr>
                                         <td></td>
-                                        <td class="summary total">Total</td>
-                                        <td class="amount total-value">$5,920</td>
+                                        <td class="summary total">Total Amount</td>
+                                        <td style="font-weight:normal; font-size:15px" class="amount total-value">{{ $requests->service_type }} X <b>{{ $requests->number_of_vehicle }}</b> Vehicle(s) </td>
                                     </tr>
                                 </table>
                             </div>
@@ -53,13 +58,14 @@
                             </div>
                         </div>
                         <div class="row invoice-company-info">
-                            <div class="col-sm-6 col-md-2 logo"><img src="{{ asset('dashboard/img/logo-symbol.png') }}" alt="{{ config('app.name') }} Logo-symbol"></div>
+                            <div class="col-sm-6 col-md-2 logo"><img src="{{ asset('dashboard/img/logo-symbol.png') }}" width="80px" alt="{{ config('app.name') }} Logo-symbol"></div>
                             <div class="col-sm-6 col-md-4 summary"><span class="title">{{ config('app.name') }} Nigeria</span>
                                 <p>We are concerned about the safety and care of your vehicle. </p>
                             </div>
                             <div class="col-sm-6 col-md-3 phone">
                                 <ul class="list-unstyled">
                                     <li>Mobile Number</li>
+                                    <li>08077620751</li>
                                 </ul>
                             </div>
                             <div class="col-sm-6 col-md-3 email">

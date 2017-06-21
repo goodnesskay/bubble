@@ -19,7 +19,7 @@ Route::group(['middleware' => ['web']], function () {
     ]);
 
     Route::get('/mail',function (){
-        return view('mail.registration-success');
+        return view('mail.request-update');
 });
 
     Route::get('/faq',[

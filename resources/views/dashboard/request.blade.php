@@ -60,12 +60,10 @@
                                     <div class="col-sm-6">
                                         <select name="service_type" class="form-control">
                                             <option >Select Service type</option>
-                                            <option >Hand Wash (Between N500 - N800)</option>
+                                            <option >Hand Wash (Between N500 - N700)</option>
                                             <option >Interior Wash (Between  N700 - N1000)</option>
                                             <option >Exterior Wash (Between N800 - N1200)</option>
-                                            <option >Engine Wash (Between N1000 - N1200)</option>
                                             <option >Full Detail (Between N1500 - N2000)</option>
-                                            <option >Interior Wash & Exterior Wash (Between  )</option>
                                          </select>
                                     </div>
                                 </div>
@@ -80,15 +78,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label">Day</label>
-                                    <div class="col-md-3 col-xs-7">
-                                        <div data-min-view="2" data-date-format="yyyy-mm-dd" class="input-group date datetimepicker">
-                                            <input size="16" type="datetime" value="" class="form-control"><span class="input-group-addon btn btn-primary"><i class="icon-th mdi mdi-calendar"></i></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label">Time</label>
+                                    <label class="col-sm-3 control-label">Wash Schedule (<b>Format:</b> 10-11-2017, 5:30PM )</label>
                                     <div class="col-md-3 col-xs-7">
                                         <div data-start-view="0" data-date="2017-09-16T05:25:07Z" data-date-format="yyyy-mm-dd - HH:ii" data-link-field="dtp_input1" class="input-group date datetimepicker">
                                             <input name="wash_schedule" size="16" type="datetime-local" value="" class="form-control"><span class="input-group-addon btn btn-primary"><i class="icon-th mdi mdi-calendar"></i></span>
