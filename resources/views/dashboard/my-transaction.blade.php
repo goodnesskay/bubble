@@ -61,10 +61,10 @@
                                                 <td class="text-bold">{{ $request->service_type }}</td>
                                                 <td class="cell-detail"><i class="icon mdi mdi-time "></i> {{ $request->wash_schedule }}</td>
                                                 <td>
-                                                    @if($request->status == 1)
+                                                    @if($request->status == 1 && (empty($request->rating) || empty($request->comment)))
+                                                    <button class="btn btn-danger">Approve & Comment</button>
+                                                    @elseif($request->status == 1)
                                                         <button class="btn btn-info">Completed</button>
-                                                    @elseif($request->status == 1 && isset($request->rating) && isset($request->comment))
-                                                        <button class="btn btn-danger">Comment Required</button>
                                                     @else
                                                         <button class="btn btn-warning">In Progress</button>
                                                     @endif

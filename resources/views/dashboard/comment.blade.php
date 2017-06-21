@@ -43,7 +43,9 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Help us serve you better with your comment</label>
                                     <div class="col-sm-6">
-                                        <textarea name="comment" rows="5" placeholder="Comment" class="form-control"></textarea>
+                                        <textarea name="comment" rows="5" placeholder="Comment" class="form-control">
+                                            {{ $requests->comment }}
+                                        </textarea>
                                     </div>
                                 </div>
                                 <button class="btn btn-primary btn-lg center-block">Request Wash</button>

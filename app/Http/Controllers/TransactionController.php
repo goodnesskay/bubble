@@ -203,7 +203,7 @@ class TransactionController extends Controller
 
         if ($requests->save())
         {
-            return redirect()->route('comment',['id'=>$requests->id,'type_of_vehicle'=>str_slug($requests->type_of_vehicle)])->with('alert','Your have successfully approved #LB01'.$requests->id.'89. Please, give us a comment on our service for us to serve you better');
+            return redirect()->route('my-transactions')->with('alert','Your have successfully approved and commented on the service for #LB01'.$requests->id.'89. Thanks fo your comment');
             //Mail::to($request->user())->send(new RequestComplete($transaction));
         }else{
             return redirect()->back()->withErrors($validator);
